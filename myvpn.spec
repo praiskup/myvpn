@@ -8,6 +8,7 @@ URL:            https://github.com/praiskup/myvpn
 Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  boost-devel
+BuildRequires:  libconfig-devel
 Requires:       n2n
 
 %description
