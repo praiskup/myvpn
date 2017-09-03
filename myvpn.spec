@@ -1,6 +1,6 @@
 Name:           myvpn
 Version:        1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Connect to vpn through n2n
 
 License:        GPLv3+
@@ -31,10 +31,13 @@ make %{?_smp_mflags}
 %files
 %license COPYING
 %attr(6755, root, root) %_bindir/myvpn_client
-%_sysconfdir/myvpn.cfg
+%config %_sysconfdir/myvpn.cfg
 
 
 
 %changelog
+* Sun Sep 03 2017 Pavel Raiskup <praiskup@redhat.com> - 1.0-2
+- config file installed %%config
+
 * Sun Sep 03 2017 Pavel Raiskup <praiskup@redhat.com> - 1.0-1
 - initial packaging
