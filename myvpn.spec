@@ -29,10 +29,11 @@ make %{?_smp_mflags}
 
 %files
 %license COPYING
-%_bindir/myvpn_client
+%attr(6755, root, root) %_bindir/myvpn_client
 %_sysconfdir/myvpn.cfg
 
 
 
 %changelog
-
+* Sun Sep 03 2017 Pavel Raiskup <praiskup@redhat.com> - 1.0-1
+- initial packaging
