@@ -1,6 +1,6 @@
 Name:           myvpn
-Version:        1.0
-Release:        2%{?dist}
+Version:        1.1
+Release:        1%{?dist}
 Summary:        Connect to vpn through n2n
 
 License:        GPLv3+
@@ -36,6 +36,9 @@ make %{?_smp_mflags}
 
 
 %changelog
+* Tue Sep 12 2017 Pavel Raiskup <praiskup@redhat.com> - 1.1-1
+- strdup() the string.c_str() before calling execve()
+
 * Sun Sep 03 2017 Pavel Raiskup <praiskup@redhat.com> - 1.0-2
 - config file installed %%config
 
