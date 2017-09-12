@@ -63,11 +63,11 @@ int main(int argc, char **argv)
     char prog[] = "/usr/sbin/edge";
     const char* const args[] = {
         (char *)prog,
-        "-c", options["network_name"].c_str(),
-        "-d", options["network_name"].c_str(),
+        "-c", strdup(options["network_name"].c_str()),
+        "-d", strdup(options["network_name"].c_str()),
         "-k", "secret",
-        "-l", (options["server"] + ":" + options["server_port"]).c_str(),
-        "-a", options["ip"].c_str(),
+        "-l", strdup((options["server"] + ":" + options["server_port"]).c_str()),
+        "-a", strdup(options["ip"].c_str()),
         NULL
     };
 
