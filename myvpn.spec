@@ -1,6 +1,6 @@
 Name:           myvpn
 Version:        1.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Connect to vpn through n2n
 
 License:        GPLv3+
@@ -34,8 +34,10 @@ make %{?_smp_mflags}
 %config %_sysconfdir/myvpn.cfg
 
 
-
 %changelog
+* Wed Oct 31 2018 Pavel Raiskup <praiskup@redhat.com> - 1.1-2
+- rebuild for new libconfig in Fedora
+
 * Tue Sep 12 2017 Pavel Raiskup <praiskup@redhat.com> - 1.1-1
 - strdup() the string.c_str() before calling execve()
 
