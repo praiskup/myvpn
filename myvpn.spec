@@ -10,6 +10,7 @@ Source0:        %{name}-%{version}.tar.gz
 BuildRequires:  boost-devel
 BuildRequires:  libconfig-devel
 Requires:       n2n
+Requires:       gcc-c++
 
 %description
 Using the 'n2n' toolset, connect to vpn.
@@ -37,6 +38,7 @@ make %{?_smp_mflags}
 %changelog
 * Wed Oct 31 2018 Pavel Raiskup <praiskup@redhat.com> - 1.1-3
 - rebuild for new libconfig in Fedora
+- BR g++
 
 * Mon May 07 2018 Pavel Raiskup <praiskup@redhat.com> - 1.1-2
 - bump for boost on f28
