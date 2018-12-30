@@ -1,0 +1,62 @@
+MyVPN - create quickly your personal VPN
+========================================
+
+This is a trivial but convenient wrapper around 'n2n' software [1] (that said
+/bin/edge utility).  It allows you to very quickly configure your own personal
+VPN network, while the only prerequisite is a (Linux) server with public IP
+address.  This software provides an alternative to e.g. what Hamachi software
+used to provide, but fully free and Open Source.
+
+
+Installation steps
+------------------
+
+On CentOS 7/Fedora, install from [2] Copr repository.  Otherwise use the
+classic autotools installation steps (autoreconf -vfi && ./configure && make &&
+sudo make install), but make sure that the /usr/bin/myvpn_client binary has suid
+bit if you want to allow non-privileged users to connect to the VPN.
+
+
+Typical configuration on server
+-------------------------------
+
+1. install 'n2n' package
+2. run '/usr/sbin/supernode -l <PORT>' command as a non-privileged user
+3. usually you want to add line like
+   "@reboot /usr/sbin/supernode -l <PORT>" into your crontab so your VPN
+   server is started after each reboot (non-root crontab ideally)
+
+
+Typical configuration on clients
+--------------------------------
+
+1. install this software (see installation steps above) and 'n2n' package
+2. edit /etc/myvpn.cfg:
+   a) connection to server
+      - 'server' parameter - IP or hostname of your server (configured above)
+      - 'server_port' - set to the same <PORT> value as above
+
+   b) network configuration
+      - pick a meaningful name for your network in 'network_name' option,
+        this needs to be consistently set on each client and can not
+        collide with network names on clients (`ip a`).
+      - pick an _unique_ 'ip' address among other clients in your new VPN
+        network
+      - use the same, (generated) secure 'password' option on each client
+        (see 'man edge' and -k option)
+
+   An example configuration:
+     server = "vpn.example.com"
+     server_port = "4444"
+     network_name = "my_family_vpn_network"
+     ip = "10.1.2.100"
+     password = "rai3Yeek"
+
+3. execute 'myvpn_client' suid binary
+4. optionally configure a crontab entry to execute 'myvpn_client' periodically
+
+
+References
+----------
+[1] https://github.com/ntop/n2n
+[2] https://copr.fedorainfracloud.org/coprs/praiskup/myvpn/

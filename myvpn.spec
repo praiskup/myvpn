@@ -31,6 +31,7 @@ make %{?_smp_mflags}
 
 %files
 %license COPYING
+%doc README
 %attr(6755, root, root) %_bindir/myvpn_client
 %config %_sysconfdir/myvpn.cfg
 
