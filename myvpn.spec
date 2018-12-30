@@ -8,9 +8,9 @@ URL:            https://github.com/praiskup/myvpn
 Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  boost-devel
+BuildRequires:  gcc-c++
 BuildRequires:  libconfig-devel
 Requires:       n2n
-Requires:       gcc-c++
 
 %description
 Using the 'n2n' toolset, connect to vpn.

@@ -19,7 +19,7 @@ void read_option(TOptions &opts, config_t *config, const char *option_name)
 {
     const char *value;
     if (!config_lookup_string(config, option_name, &value)) {
-        std::cerr << "misssing " << option_name << " option" << std::endl;
+        std::cerr << "mising " << option_name << " option" << std::endl;
         exit (1);
     }
 
@@ -77,13 +77,13 @@ int main(int argc, char **argv)
         };
 
         execv("/usr/bin/killall", (char* const*)a);
-        printf("can't killlall");
+        printf("can't killall");
         return 1;
     }
 
     int status;
     if (-1 == waitpid(-1, &status, 0)) {
-        printf("cant wait!\n");
+        printf("can't wait!\n");
         return 1;
     }
 
