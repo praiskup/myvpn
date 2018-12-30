@@ -1,6 +1,6 @@
 Name:           myvpn
 Version:        1.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Connect to vpn through n2n
 
 License:        GPLv3+
@@ -36,6 +36,9 @@ make %{?_smp_mflags}
 
 
 %changelog
+* Sun Dec 30 2018 Pavel Raiskup <praiskup@redhat.com> - 1.1-4
+- add "password" option
+
 * Wed Oct 31 2018 Pavel Raiskup <praiskup@redhat.com> - 1.1-3
 - rebuild for new libconfig in Fedora
 - BR g++

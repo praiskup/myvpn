@@ -59,13 +59,14 @@ int main(int argc, char **argv)
     read_option (options, cf, "ip");
     read_option (options, cf, "server");
     read_option (options, cf, "server_port");
+    read_option (options, cf, "password");
 
     char prog[] = "/usr/sbin/edge";
     const char* const args[] = {
         (char *)prog,
         "-c", strdup(options["network_name"].c_str()),
         "-d", strdup(options["network_name"].c_str()),
-        "-k", "secret",
+        "-k", strdup(options["password"].c_str()),
         "-l", strdup((options["server"] + ":" + options["server_port"]).c_str()),
         "-a", strdup(options["ip"].c_str()),
         NULL
