@@ -23,8 +23,9 @@ Typical configuration on server
 1. install 'n2n' package
 2. run '/usr/sbin/supernode -l <PORT>' command as a non-privileged user
 3. usually you want to add line like
-   "@reboot /usr/sbin/supernode -l <PORT>" into your crontab so your VPN
-   server is started after each reboot (non-root crontab ideally)
+   `@reboot /usr/sbin/supernode -l <PORT> -v -f >> /var/log/n2n.log`
+   into your crontab so your VPN server is started after each reboot (non-root
+   crontab ideally)
 
 
 Typical configuration on clients
