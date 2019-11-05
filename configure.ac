@@ -1,4 +1,4 @@
-AC_INIT([myvpn], [1.1.1], [pavel@raiskup.cz])
+AC_INIT([myvpn], [1.2], [pavel@raiskup.cz])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign subdir-objects])
 AM_SILENT_RULES([yes])
 AC_PROG_CXX

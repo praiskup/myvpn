@@ -1,6 +1,6 @@
 Name:           myvpn
-Version:        1.1.1
-Release:        2%{?dist}
+Version:        1.2
+Release:        1%{?dist}
 Summary:        Connect to vpn through n2n
 
 License:        GPLv3+
@@ -37,6 +37,9 @@ make %{?_smp_mflags}
 
 
 %changelog
+* Tue Nov 05 2019 Pavel Raiskup <praiskup@redhat.com> - 1.2-1
+- new mac config option
+
 * Sun Sep 29 2019 Pavel Raiskup <praiskup@redhat.com> - 1.1.1-2
 - noreplace
 
