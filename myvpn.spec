@@ -1,5 +1,5 @@
 Name:           myvpn
-Version:        1.2
+Version:        1.3
 Release:        1%{?dist}
 Summary:        Connect to vpn through n2n
 
@@ -37,6 +37,9 @@ make %{?_smp_mflags}
 
 
 %changelog
+* Tue Nov 26 2019 Pavel Raiskup <praiskup@redhat.com> - 1.3-1
+- new port config option
+
 * Tue Nov 05 2019 Pavel Raiskup <praiskup@redhat.com> - 1.2-1
 - new mac config option
 
