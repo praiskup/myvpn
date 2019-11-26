@@ -67,6 +67,7 @@ int main(int argc, char **argv)
     read_option (options, cf, "server_port");
     read_option (options, cf, "password");
     read_option (options, cf, "mac", 0);
+    read_option (options, cf, "port", 0);
 
     char prog[] = "/usr/sbin/edge";
 
@@ -91,6 +92,11 @@ int main(int argc, char **argv)
     if (options.find("mac") != options.end()) {
         args.push_back("-m");
         args.push_back(strdup(options["mac"].c_str()));
+    }
+
+    if (options.find("port") != options.end()) {
+        args.push_back("-p");
+        args.push_back(strdup(options["port"].c_str()));
     }
 
     args.push_back(NULL);
