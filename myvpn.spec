@@ -1,6 +1,6 @@
 Name:           myvpn
 Version:        1.3
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Connect to vpn through n2n
 
 License:        GPLv3+
@@ -37,6 +37,9 @@ make %{?_smp_mflags}
 
 
 %changelog
+* Fri Aug 11 2023 Pavel Raiskup <praiskup@redhat.com> - 1.3-6
+- rebuild for F39
+
 * Tue May 23 2023 Pavel Raiskup <praiskup@redhat.com> - 1.3-5
 - rebuild for f38
 
